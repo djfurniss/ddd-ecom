@@ -5,12 +5,15 @@ import "./Products.css";
 export default function Products(){
     return(
         <div id="Products">
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
+            {/* TODO: map an array of products */}
+            <div className="scrollable">
+                <Product/>
+                <Product/>
+                <Product/>
+                <Product/>
+                <Product/>
+                <Product/>
+            </div>
         </div>
     )
 }
