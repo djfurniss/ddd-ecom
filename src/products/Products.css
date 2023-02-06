@@ -1,0 +1,6 @@
+#Products{
+    background-color: rgb(218, 207, 192);
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,15 @@
+#Product{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+#Product img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+#Product h3, p{
+    margin: 5px;
+}
