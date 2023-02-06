@@ -13,3 +13,12 @@
 #Product h3, p{
     margin: 5px;
 }
+
+#Product #atc{
+    margin: 5px 10px 0px;
+}
+
+#Product .between{
+    display: flex;
+    justify-content: space-between;
+}
