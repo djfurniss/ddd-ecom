@@ -1,0 +1,19 @@
+#Nav{
+    margin: 0;
+    /* padding: 20px; */
+    width: 100vw;
+    height: 80px;
+    background-color: rgb(241, 226, 207);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#Nav h1{
+    margin: 20px;
+    color: rgb(75, 75, 75);
+}
+
+#Nav #cart{
+    margin: 20px 50px;
+}
