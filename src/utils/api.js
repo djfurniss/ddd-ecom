@@ -13,7 +13,7 @@ export function getProds(){
 
 //create cart
 export function createCart(){
-    localStorage.setItem("cart", JSON.stringify(['test']))
+    localStorage.setItem("cart", JSON.stringify([]))
     console.log(JSON.parse(localStorage.getItem('cart')))
 };
 
@@ -28,6 +28,7 @@ export function addItemToCart(prod){
     // add that product to the cart 
     let cart = JSON.parse(localStorage.getItem("cart"))
     localStorage.setItem("cart", JSON.stringify([...cart, prod]))
+    console.log(localStorage)
     return getCart()
 };
 // * digital products usually don't need to be added to cart more than once, so i wont be keeping track of quantity
