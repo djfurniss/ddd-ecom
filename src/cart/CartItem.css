@@ -1,0 +1,15 @@
+#CartItem{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+#CartItem img{
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    object-fit: cover;
+}
+
+/* * I want to add an animation where when you add an item and the cart is open, 
+  * it pulses a color to indicate it's newly added.. */
