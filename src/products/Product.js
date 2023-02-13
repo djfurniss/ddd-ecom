@@ -1,22 +1,22 @@
 import React from "react";
-import { BsCartPlus } from "react-icons/bs"
+import { addItemToCart } from "../utils/api";
+import { BsCartPlus } from "react-icons/bs";
 import "./Product.css";
 
-export default function Product(){
-    // TODO: props = img_src, name, price
+export default function Product({ prod, setCart }){
     return(
         <div id="Product">
             <div>
-                <img src="https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"/>
+                <img src={prod.imgSrc}/>
             </div>
             <div className="row between">
                 <div>
-                    <h3>Name</h3>
-                    <p>Price</p>
+                    <h3>{prod.name}</h3>
+                    <p>${(prod.price).toFixed(2)}</p>
                 </div>
                 <div id="atc">
                     {/* add to cart icon */}
-                    <BsCartPlus size={25} color="3f3f3f"/>
+                    <BsCartPlus size={25} color="3f3f3f" cursor="pointer" onClick={()=>setCart(addItemToCart(prod))}/>
                 </div>
             </div>
         </div>
