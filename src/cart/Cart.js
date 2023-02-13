@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CartItem from "./CartItem";
-import { createCart, getCart, clearCart, removeItemFromCart } from "../utils/api";
+import { createCart, getCart, clearCart, removeItemFromCart, trashCart } from "../utils/api";
 import { AiFillCaretRight, AiOutlineDelete } from "react-icons/ai";
 import "./Cart.css";
 
@@ -9,7 +9,9 @@ export default function Cart({ cart, setCart, setCartVisible}){
         // console.log(localStorage)
         // trashCart()
         if (!localStorage.getItem('cart')) {
+            console.log("no cart open, creating cart")
             createCart()
+            console.log(localStorage)
         }else{
             setCart(getCart())
         }
