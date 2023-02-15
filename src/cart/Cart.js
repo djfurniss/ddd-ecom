@@ -14,6 +14,7 @@ export default function Cart({ cart, setCart, setCartVisible}){
             console.log(localStorage)
         }else{
             setCart(getCart())
+            console.log(localStorage)
         }
     },[])
 
