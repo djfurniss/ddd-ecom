@@ -24,7 +24,7 @@ export default function Cart({ cart, setCart, setCartVisible}){
                 {cart.length ? <AiOutlineDelete size={30} onClick={()=>setCart(clearCart())} cursor="pointer" /> : null} {/* need to use a modal to confirm clearing */}
             </div>
 
-            <div id="cart-items" className="scrollable">
+            {/* <div id="cart-items" className="scrollable">
                 {cart.length ? cart.map((item, index)=>{
                     return(
                         <CartItem prod={item} key={index} removeItemFromCart={()=>{
@@ -34,7 +34,7 @@ export default function Cart({ cart, setCart, setCartVisible}){
                     }/>
                     )
                 }): null}
-            </div>
+            </div> */}
 
            {cart.length ? 
            <div id="checkout">
