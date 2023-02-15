@@ -7,7 +7,7 @@ import "./Cart.css";
 export default function Cart({ cart, setCart, setCartVisible}){
     useEffect(()=>{
         // console.log(localStorage)
-        // trashCart()
+        trashCart()
         if (!localStorage.getItem('cart')) {
             console.log("no cart open, creating cart")
             createCart()
