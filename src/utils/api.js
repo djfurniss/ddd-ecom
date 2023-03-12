@@ -13,6 +13,12 @@ export function getProds(){
 
 //create cart
 export function createCart(){
+    /*  
+    ? cart expiration ? from the moment they enter the site and a cart is created,
+    ? ALSO create a variable in local storage, "expire-time" that is 10 minutes
+    ? from the time they got on.. and display a timer so they can know that their cart will end up disapearing 
+    */
+
     localStorage.setItem("cart", JSON.stringify([]))
     console.log(JSON.parse(localStorage.getItem('cart')))
 };
@@ -25,14 +31,13 @@ export function getCart(){
 
 // add item to cart
 export function addItemToCart(prod){
-    // add that product to the cart 
     let cart = JSON.parse(localStorage.getItem("cart"))
     localStorage.setItem("cart", JSON.stringify([...cart, prod]))
-    console.log(localStorage)
     return getCart()
+    // * digital products usually don't need to be added to cart more than once, so i wont be keeping track of quantity
+    // * however, I do want to alert the user if they're trying to add an item that's already in the cart and ask if they want to add it again.. 
+    // * if they do, that's a deliberate user choice at that point...
 };
-// * digital products usually don't need to be added to cart more than once, so i wont be keeping track of quantity
-// * however, I do want to alert the user if they're trying to add an item that's already in the cart and ask if they want to add it again.. if they do, that's on them...
 
 // remove item from cart
 export function removeItemFromCart(indexToRemove){
