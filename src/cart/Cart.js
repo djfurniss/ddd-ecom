@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import CartItem from "./CartItem";
+import Checkout from "./Checkout";
 import { createCart, getCart, clearCart, removeItemFromCart, trashCart } from "../utils/api";
 import { AiFillCaretRight, AiOutlineDelete } from "react-icons/ai";
 import "./Cart.css";
 
 export default function Cart({ cart, setCart, setCartVisible}){
+
+    const [checkoutVisible, setCheckoutVisible] = useState(false)
     useEffect(()=>{
         // console.log(localStorage)
         trashCart()
@@ -38,9 +41,14 @@ export default function Cart({ cart, setCart, setCartVisible}){
             </div>
 
            {cart.length ? 
-           <div id="checkout">
-                <p>Checkout</p> {/* clicking this button needs to cause an animation to scroll down below the checkout button where there will be a form for payment... */}
+           <div 
+                id="checkout"
+                onClick={()=>{
+                    setCheckoutVisible(!checkoutVisible)
+                    }}>
+                <p>{checkoutVisible ? "View Cart" : "Checkout"}</p> {/* clicking this button needs to cause an animation to scroll down below the checkout button where there will be a form for payment... */}
             </div> : null}
+            {checkoutVisible && <Checkout/>}
         </div>
     )
 };
